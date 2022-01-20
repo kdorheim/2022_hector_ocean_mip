@@ -43,7 +43,6 @@ results <- dplyr::bind_rows(hector_heatflux, hector_tas, hector_fgco2)
 results$year <- paste0("X", results$year)
 
 
-
 write.csv(results, "hector_mip_results.csv", row.names = FALSE)
 
 submission <- data.table::dcast(results, scenario + variable + units ~ year ) 
